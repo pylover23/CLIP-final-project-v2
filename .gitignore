@@ -15,12 +15,6 @@ env/
 .vscode/
 .idea/
 
-# Model checkpoints (large files)
-checkpoints/
-*.pth
-*.pt
-*.ckpt
-
 # ChromaDB
 chroma_db_*/
 

@@ -1,0 +1,10 @@
+torch
+torchvision
+pandas
+Pillow
+git+https://github.com/openai/CLIP.git
+fastapi
+pydantic
+tqdm
+chromadb
+uvicorn
