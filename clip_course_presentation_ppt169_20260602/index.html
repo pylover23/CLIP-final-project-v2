@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>基于 CLIP 的 ABO 商品图文检索实验 | 课堂汇报</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: rgba(14, 27, 45, 0.88);
+      --panel-strong: #0e1b2d;
+      --line: rgba(32, 52, 79, 0.9);
+      --primary: #1e66f5;
+      --accent: #26c6da;
+      --text: #eaf2ff;
+      --muted: #a8b7cf;
+      --muted-2: #71839e;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 14%, rgba(38, 198, 218, 0.1), transparent 30%),
+        radial-gradient(circle at 82% 22%, rgba(30, 102, 245, 0.12), transparent 34%),
+        linear-gradient(180deg, #07111f 0%, #091524 100%);
+      color: var(--text);
+      font-family: "Inter", "Microsoft YaHei", "Segoe UI", sans-serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      opacity: 0.22;
+      pointer-events: none;
+    }
+
+    #deck {
+      display: flex;
+      width: 1500vw;
+      height: 100vh;
+      transition: transform 0.8s var(--ease);
+      will-change: transform;
+      position: relative;
+      z-index: 1;
+    }
+
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      flex: 0 0 100vw;
+      display: grid;
+      place-items: center;
+      padding: 5.2vh 4.4vw 8.4vh;
+      position: relative;
+    }
+
+    .slide::after {
+      content: attr(data-title);
+      position: absolute;
+      left: 4.8vw;
+      bottom: 2.3vh;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted-2);
+    }
+
+    .art-frame {
+      width: min(92vw, 166vh);
+      aspect-ratio: 16 / 9;
+      border: 1px solid rgba(102, 227, 255, 0.18);
+      background: rgba(7, 17, 31, 0.88);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+      transform: translateY(0);
+      transition: transform 0.55s var(--ease), box-shadow 0.55s var(--ease);
+    }
+
+    .slide.active .art-frame {
+      transform: translateY(-2px);
+      box-shadow: 0 28px 96px rgba(0, 0, 0, 0.45);
+    }
+
+    .slide-art {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      background: #07111f;
+    }
+
+    .hud {
+      position: fixed;
+      top: 2.4vh;
+      left: 2vw;
+      right: 2vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .hud-panel {
+      pointer-events: auto;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.22);
+    }
+
+    .hud-title {
+      padding: 14px 18px;
+      min-width: 320px;
+    }
+
+    .hud-kicker {
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .hud-main {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .hud-sub {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .hud-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 12px 14px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hud-meta .current {
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .hud-meta .sep {
+      width: 18px;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .dots {
+      position: fixed;
+      left: 50%;
+      bottom: 2.4vh;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 9px;
+      padding: 10px 14px;
+      background: rgba(7, 17, 31, 0.72);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      backdrop-filter: blur(10px);
+      z-index: 6;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid rgba(168, 183, 207, 0.45);
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .dot.active {
+      transform: scale(1.18);
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .index-overlay {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 5vh 5vw;
+      background: rgba(3, 8, 16, 0.74);
+      backdrop-filter: blur(16px);
+      z-index: 20;
+    }
+
+    .index-overlay.open {
+      display: flex;
+    }
+
+    .index-panel {
+      width: min(980px, 92vw);
+      max-height: 84vh;
+      overflow: auto;
+      background: rgba(11, 23, 39, 0.96);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .index-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .index-head h2 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+    }
+
+    .index-head p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .index-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .index-item {
+      border: 1px solid var(--line);
+      background: rgba(14, 27, 45, 0.9);
+      color: var(--text);
+      text-align: left;
+      padding: 14px 16px;
+      cursor: pointer;
+      transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+    }
+
+    .index-item:hover,
+    .index-item:focus-visible {
+      border-color: rgba(38, 198, 218, 0.65);
+      background: rgba(20, 38, 60, 0.96);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .index-item .num {
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .index-item .title {
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .hint {
+      position: fixed;
+      right: 2vw;
+      bottom: 2.2vh;
+      color: var(--muted-2);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      z-index: 6;
+      background: rgba(7, 17, 31, 0.68);
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      backdrop-filter: blur(10px);
+    }
+
+    @media (max-width: 960px) {
+      .hud {
+        flex-direction: column;
+      }
+
+      .hud-title {
+        min-width: 0;
+        width: 100%;
+      }
+
+      .hud-meta {
+        align-self: flex-end;
+      }
+
+      .index-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .art-frame {
+        width: 95vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hud">
+    <div class="hud-panel hud-title">
+      <div class="hud-kicker">Style B / Swiss Classroom Deck</div>
+      <div class="hud-main">基于 CLIP 的 ABO 商品图文检索实验</div>
+      <div class="hud-sub">15 分钟课堂汇报：选题背景、模型设计、关键实现与实验结果</div>
+    </div>
+    <div class="hud-panel hud-meta">
+      <span class="current" id="currentPage">01</span>
+      <span class="sep"></span>
+      <span>15 Slides</span>
+      <span class="sep"></span>
+      <span id="currentLabel">封面</span>
+    </div>
+  </div>
+
+  <main id="deck">
+    <section class="slide active" data-title="封面">
+      <div class="art-frame"><img class="slide-art" src="svg_output/01_cover.svg" alt="封面"></div>
+    </section>
+    <section class="slide" data-title="为什么做这个选题">
+      <div class="art-frame"><img class="slide-art" src="svg_output/02_scene.svg" alt="为什么做这个选题"></div>
+    </section>
+    <section class="slide" data-title="三个核心问题">
+      <div class="art-frame"><img class="slide-art" src="svg_output/03_questions.svg" alt="三个核心问题"></div>
+    </section>
+    <section class="slide" data-title="任务定义与整体流程">
+      <div class="art-frame"><img class="slide-art" src="svg_output/04_task_pipeline.svg" alt="任务定义与整体流程"></div>
+    </section>
+    <section class="slide" data-title="数据集与样本构建">
+      <div class="art-frame"><img class="slide-art" src="svg_output/05_dataset.svg" alt="数据集与样本构建"></div>
+    </section>
+    <section class="slide" data-title="Prompt 设计">
+      <div class="art-frame"><img class="slide-art" src="svg_output/06_prompt_design.svg" alt="Prompt 设计"></div>
+    </section>
+    <section class="slide" data-title="Original CLIP">
+      <div class="art-frame"><img class="slide-art" src="svg_output/07_original_clip.svg" alt="Original CLIP"></div>
+    </section>
+    <section class="slide" data-title="Linear Probe">
+      <div class="art-frame"><img class="slide-art" src="svg_output/08_linear_probe.svg" alt="Linear Probe"></div>
+    </section>
+    <section class="slide" data-title="LoRA 微调">
+      <div class="art-frame"><img class="slide-art" src="svg_output/09_lora.svg" alt="LoRA 微调"></div>
+    </section>
+    <section class="slide" data-title="检索系统实现">
+      <div class="art-frame"><img class="slide-art" src="svg_output/10_system_impl.svg" alt="检索系统实现"></div>
+    </section>
+    <section class="slide" data-title="实验设置与指标">
+      <div class="art-frame"><img class="slide-art" src="svg_output/11_metrics_setup.svg" alt="实验设置与指标"></div>
+    </section>
+    <section class="slide" data-title="Prompt 结果">
+      <div class="art-frame"><img class="slide-art" src="svg_output/12_prompt_results.svg" alt="Prompt 结果"></div>
+    </section>
+    <section class="slide" data-title="模型结果对比">
+      <div class="art-frame"><img class="slide-art" src="svg_output/13_model_results.svg" alt="模型结果对比"></div>
+    </section>
+    <section class="slide" data-title="消融与错误分析">
+      <div class="art-frame"><img class="slide-art" src="svg_output/14_ablation_errors.svg" alt="消融与错误分析"></div>
+    </section>
+    <section class="slide" data-title="结论与展望">
+      <div class="art-frame"><img class="slide-art" src="svg_output/15_conclusion.svg" alt="结论与展望"></div>
+    </section>
+  </main>
+
+  <div class="dots" id="dots" aria-label="Slide navigation"></div>
+
+  <div class="index-overlay" id="indexOverlay" aria-hidden="true">
+    <div class="index-panel">
+      <div class="index-head">
+        <div>
+          <h2>目录索引</h2>
+          <p>按 <strong>Esc</strong> 可开关目录，点击任意条目直接跳转。</p>
+        </div>
+      </div>
+      <div class="index-grid" id="indexGrid"></div>
+    </div>
+  </div>
+
+  <div class="hint">← → / 滚轮 / 触摸滑动 / Esc 目录</div>
+
+  <script>
+    const deck = document.getElementById("deck");
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const dots = document.getElementById("dots");
+    const currentPage = document.getElementById("currentPage");
+    const currentLabel = document.getElementById("currentLabel");
+    const indexOverlay = document.getElementById("indexOverlay");
+    const indexGrid = document.getElementById("indexGrid");
+
+    let current = 0;
+    let wheelLock = false;
+    let touchStartX = 0;
+    let touchDeltaX = 0;
+
+    function formatPage(value) {
+      return String(value + 1).padStart(2, "0");
+    }
+
+    function setSlide(next) {
+      current = Math.max(0, Math.min(next, slides.length - 1));
+      deck.style.transform = `translateX(-${current * 100}vw)`;
+      slides.forEach((slide, index) => {
+        slide.classList.toggle("active", index === current);
+      });
+      Array.from(dots.children).forEach((dot, index) => {
+        dot.classList.toggle("active", index === current);
+      });
+      Array.from(indexGrid.children).forEach((item, index) => {
+        item.style.borderColor = index === current ? "rgba(38, 198, 218, 0.72)" : "rgba(32, 52, 79, 0.9)";
+      });
+      currentPage.textContent = formatPage(current);
+      currentLabel.textContent = slides[current].dataset.title;
+    }
+
+    function nextSlide() {
+      setSlide(current + 1);
+    }
+
+    function prevSlide() {
+      setSlide(current - 1);
+    }
+
+    function toggleIndex(force) {
+      const nextState = typeof force === "boolean" ? force : !indexOverlay.classList.contains("open");
+      indexOverlay.classList.toggle("open", nextState);
+      indexOverlay.setAttribute("aria-hidden", String(!nextState));
+    }
+
+    slides.forEach((slide, index) => {
+      const dot = document.createElement("button");
+      dot.className = "dot";
+      dot.type = "button";
+      dot.setAttribute("aria-label", `跳转到第 ${index + 1} 页`);
+      dot.addEventListener("click", () => setSlide(index));
+      dots.appendChild(dot);
+
+      const item = document.createElement("button");
+      item.className = "index-item";
+      item.type = "button";
+      item.innerHTML = `<div class="num">Slide ${formatPage(index)}</div><div class="title">${slide.dataset.title}</div>`;
+      item.addEventListener("click", () => {
+        setSlide(index);
+        toggleIndex(false);
+      });
+      indexGrid.appendChild(item);
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight" || event.key === "PageDown") {
+        toggleIndex(false);
+        nextSlide();
+      } else if (event.key === "ArrowLeft" || event.key === "PageUp") {
+        toggleIndex(false);
+        prevSlide();
+      } else if (event.key === "Escape") {
+        toggleIndex();
+      } else if (event.key === "Home") {
+        toggleIndex(false);
+        setSlide(0);
+      } else if (event.key === "End") {
+        toggleIndex(false);
+        setSlide(slides.length - 1);
+      }
+    });
+
+    window.addEventListener("wheel", (event) => {
+      if (indexOverlay.classList.contains("open")) return;
+      if (wheelLock) return;
+      if (Math.abs(event.deltaY) < 16 && Math.abs(event.deltaX) < 16) return;
+      wheelLock = true;
+      if (event.deltaY > 0 || event.deltaX > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+      window.setTimeout(() => {
+        wheelLock = false;
+      }, 720);
+    }, { passive: true });
+
+    window.addEventListener("touchstart", (event) => {
+      touchStartX = event.touches[0].clientX;
+      touchDeltaX = 0;
+    }, { passive: true });
+
+    window.addEventListener("touchmove", (event) => {
+      touchDeltaX = event.touches[0].clientX - touchStartX;
+    }, { passive: true });
+
+    window.addEventListener("touchend", () => {
+      if (Math.abs(touchDeltaX) < 50) return;
+      if (touchDeltaX < 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+      touchDeltaX = 0;
+    });
+
+    indexOverlay.addEventListener("click", (event) => {
+      if (event.target === indexOverlay) {
+        toggleIndex(false);
+      }
+    });
+
+    setSlide(0);
+  </script>
+</body>
+</html>

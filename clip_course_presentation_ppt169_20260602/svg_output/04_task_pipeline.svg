@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+<rect x="0" y="0" width="1280" height="720" fill="#FBFBF8" stroke="none" stroke-width="0" rx="0" />
+<rect x="56" y="50" width="1168" height="620" fill="#FBFBF8" stroke="#D8DEE6" stroke-width="2" rx="0" />
+<line x1="86" y1="104" x2="1192" y2="104" stroke="#111111" stroke-width="2"/>
+<text x="86" y="84" fill="#127A94" font-family="Consolas, Courier New, monospace" font-size="15" font-weight="400" text-anchor="start" letter-spacing="2.4">TASK PIPELINE</text>
+<text x="86" y="148" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="36" font-weight="700" text-anchor="start" >任务定义与整体流程</text>
+<text x="1200" y="84" fill="#6C7988" font-family="Consolas, Courier New, monospace" font-size="16" font-weight="400" text-anchor="end" letter-spacing="2">04</text>
+<text x="1200" y="652" fill="#6C7988" font-family="Consolas, Courier New, monospace" font-size="16" font-weight="400" text-anchor="end" >4</text>
+<text x="90" y="222" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="28" font-weight="700" text-anchor="start" >任务定义：给定商品文本描述，在候选图像库中返回最匹配的商品。</text>
+<text x="90" y="260" fill="#3E4A59" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start" >核心流程是“编码 - 存储 - 近邻检索 - 指标评价”。</text>
+<rect x="108" y="320" width="220" height="110" fill="#FFFFFF" stroke="#111111" stroke-width="2" rx="0" />
+<text x="128" y="364" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="start" >文本查询</text>
+<text x="128" y="398" fill="#3E4A59" font-family="Arial, Microsoft YaHei, sans-serif" font-size="18" font-weight="400" text-anchor="start" >商品描述 / Prompt</text>
+<rect x="382" y="320" width="220" height="110" fill="#FFFFFF" stroke="#111111" stroke-width="2" rx="0" />
+<text x="402" y="364" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="start" >文本编码</text>
+<text x="402" y="398" fill="#3E4A59" font-family="Arial, Microsoft YaHei, sans-serif" font-size="18" font-weight="400" text-anchor="start" >CLIP Text Encoder</text>
+<rect x="656" y="320" width="220" height="110" fill="#FFFFFF" stroke="#111111" stroke-width="2" rx="0" />
+<text x="676" y="364" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="start" >向量检索</text>
+<text x="676" y="398" fill="#3E4A59" font-family="Arial, Microsoft YaHei, sans-serif" font-size="18" font-weight="400" text-anchor="start" >ChromaDB Top-K</text>
+<rect x="930" y="320" width="220" height="110" fill="#FFFFFF" stroke="#111111" stroke-width="2" rx="0" />
+<text x="950" y="364" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="start" >结果返回</text>
+<text x="950" y="398" fill="#3E4A59" font-family="Arial, Microsoft YaHei, sans-serif" font-size="18" font-weight="400" text-anchor="start" >最匹配商品图像</text>
+<line x1="328" y1="374" x2="382" y2="374" stroke="#1DA9C2" stroke-width="4"/>
+<line x1="602" y1="374" x2="656" y2="374" stroke="#1DA9C2" stroke-width="4"/>
+<line x1="876" y1="374" x2="930" y2="374" stroke="#1DA9C2" stroke-width="4"/>
+<rect x="166" y="500" width="900" height="90" fill="#E6F7FB" stroke="#127A94" stroke-width="2" rx="0" />
+<text x="190" y="540" fill="#127A94" font-family="Arial, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start" >评价指标：Recall@K 衡量是否命中，MRR@K 衡量正确结果是否排在前面，NDCG@K 兼顾命中与排序质量。</text>
+<text x="190" y="570" fill="#127A94" font-family="Arial, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start" >本实验统一比较 Top-5 / Top-10 / Top-20 三种候选规模。</text>
+</svg>

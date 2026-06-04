@@ -1,0 +1,46 @@
+projection_mode,baseline,prompt,top_k,recall,mrr,ndcg
+both,Linear Probe (text+vision),type,5,0.0446,0.0193,0.0255
+both,Linear Probe (text+vision),material,5,0.0634,0.0338,0.0410
+both,Linear Probe (text+vision),brand,5,0.1054,0.0501,0.0637
+both,Linear Probe (text+vision),brand_material,5,0.1170,0.0599,0.0739
+both,Linear Probe (text+vision),full,5,0.8009,0.5888,0.6418
+both,Linear Probe (text+vision),type,10,0.0893,0.0250,0.0397
+both,Linear Probe (text+vision),material,10,0.1152,0.0403,0.0574
+both,Linear Probe (text+vision),brand,10,0.1732,0.0589,0.0853
+both,Linear Probe (text+vision),brand_material,10,0.2018,0.0708,0.1010
+both,Linear Probe (text+vision),full,10,0.8768,0.5990,0.6665
+both,Linear Probe (text+vision),type,20,0.1598,0.0297,0.0573
+both,Linear Probe (text+vision),material,20,0.1920,0.0456,0.0768
+both,Linear Probe (text+vision),brand,20,0.2982,0.0675,0.1169
+both,Linear Probe (text+vision),brand_material,20,0.3080,0.0781,0.1277
+both,Linear Probe (text+vision),full,20,0.9277,0.6027,0.6795
+text_only,Linear Probe (text only),type,5,0.0455,0.0193,0.0257
+text_only,Linear Probe (text only),material,5,0.0661,0.0326,0.0409
+text_only,Linear Probe (text only),brand,5,0.0946,0.0400,0.0534
+text_only,Linear Probe (text only),brand_material,5,0.1107,0.0518,0.0663
+text_only,Linear Probe (text only),full,5,0.6955,0.4825,0.5357
+text_only,Linear Probe (text only),type,10,0.0938,0.0255,0.0411
+text_only,Linear Probe (text only),material,10,0.1277,0.0405,0.0605
+text_only,Linear Probe (text only),brand,10,0.1714,0.0499,0.0779
+text_only,Linear Probe (text only),brand_material,10,0.1991,0.0630,0.0942
+text_only,Linear Probe (text only),full,10,0.8107,0.4982,0.5734
+text_only,Linear Probe (text only),type,20,0.1893,0.0319,0.0650
+text_only,Linear Probe (text only),material,20,0.2420,0.0481,0.0890
+text_only,Linear Probe (text only),brand,20,0.2955,0.0584,0.1092
+text_only,Linear Probe (text only),brand_material,20,0.3339,0.0723,0.1282
+text_only,Linear Probe (text only),full,20,0.8839,0.5037,0.5924
+vision_only,Linear Probe (vision only),type,5,0.0429,0.0190,0.0249
+vision_only,Linear Probe (vision only),material,5,0.0688,0.0354,0.0436
+vision_only,Linear Probe (vision only),brand,5,0.0964,0.0432,0.0562
+vision_only,Linear Probe (vision only),brand_material,5,0.1223,0.0628,0.0774
+vision_only,Linear Probe (vision only),full,5,0.7188,0.5067,0.5598
+vision_only,Linear Probe (vision only),type,10,0.0830,0.0243,0.0377
+vision_only,Linear Probe (vision only),material,10,0.1241,0.0427,0.0614
+vision_only,Linear Probe (vision only),brand,10,0.1634,0.0519,0.0776
+vision_only,Linear Probe (vision only),brand_material,10,0.2107,0.0745,0.1059
+vision_only,Linear Probe (vision only),full,10,0.8321,0.5224,0.5971
+vision_only,Linear Probe (vision only),type,20,0.1589,0.0294,0.0567
+vision_only,Linear Probe (vision only),material,20,0.2214,0.0493,0.0858
+vision_only,Linear Probe (vision only),brand,20,0.2768,0.0595,0.1060
+vision_only,Linear Probe (vision only),brand_material,20,0.3312,0.0825,0.1359
+vision_only,Linear Probe (vision only),full,20,0.9009,0.5274,0.6147

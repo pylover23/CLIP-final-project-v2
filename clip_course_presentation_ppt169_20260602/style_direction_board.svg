@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#eef2f5"/>
+
+  <text x="80" y="88" fill="#0d141c" font-family="Arial, Microsoft YaHei, sans-serif" font-size="46" font-weight="700">极简瑞士学术风 · 新素材方向对比</text>
+  <text x="80" y="132" fill="#556372" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24">只比较新的视觉语言，不代表最终内容排版。请选择更接近你想要的课堂汇报气质。</text>
+
+  <rect x="70" y="180" width="700" height="650" rx="18" fill="#fcfcfa" stroke="#11181f" stroke-width="2"/>
+  <rect x="830" y="180" width="700" height="650" rx="18" fill="#f4f6f8" stroke="#aab7c4" stroke-width="2"/>
+
+  <text x="110" y="240" fill="#0d141c" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700">A / 硬朗答辩版</text>
+  <text x="870" y="240" fill="#345d86" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700">B / 温和研究版</text>
+
+  <rect x="110" y="278" width="620" height="2" fill="#11181f"/>
+  <rect x="870" y="278" width="620" height="2" fill="#6d89a5"/>
+
+  <text x="110" y="348" fill="#0d141c" font-family="Arial, Microsoft YaHei, sans-serif" font-size="60" font-weight="700">CLIP 商品检索</text>
+  <text x="110" y="408" fill="#0d141c" font-family="Arial, Microsoft YaHei, sans-serif" font-size="60" font-weight="700">实验结果</text>
+  <text x="870" y="348" fill="#17324d" font-family="Arial, Microsoft YaHei, sans-serif" font-size="56" font-weight="700">CLIP 商品检索</text>
+  <text x="870" y="404" fill="#17324d" font-family="Arial, Microsoft YaHei, sans-serif" font-size="56" font-weight="700">实验结果</text>
+
+  <text x="112" y="458" fill="#6b7783" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22">白底、高对比、黑线框、单一青蓝强调，像正式课程答辩。</text>
+  <text x="872" y="454" fill="#6f7f90" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22">冷灰底、蓝灰层次、更柔和的边框和分区，像研究汇报。</text>
+
+  <rect x="112" y="500" width="288" height="170" fill="#0f1720"/>
+  <text x="142" y="554" fill="#ffffff" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700">Recall@5</text>
+  <text x="142" y="632" fill="#7de7f2" font-family="Arial, sans-serif" font-size="72" font-weight="700">0.8339</text>
+
+  <rect x="432" y="500" width="298" height="170" fill="#f7f8f8" stroke="#11181f" stroke-width="2"/>
+  <rect x="468" y="612" width="44" height="22" fill="#11181f"/>
+  <rect x="540" y="572" width="44" height="62" fill="#11181f"/>
+  <rect x="612" y="538" width="44" height="96" fill="#25bfd8"/>
+  <text x="468" y="694" fill="#5d6874" font-family="Arial, sans-serif" font-size="18">base</text>
+  <text x="540" y="694" fill="#5d6874" font-family="Arial, sans-serif" font-size="18">LP</text>
+  <text x="612" y="694" fill="#25bfd8" font-family="Arial, sans-serif" font-size="18">LoRA</text>
+
+  <rect x="872" y="500" width="270" height="170" fill="#dfe8ef"/>
+  <text x="902" y="552" fill="#17324d" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">关键发现</text>
+  <text x="902" y="602" fill="#2c3d4f" font-family="Arial, Microsoft YaHei, sans-serif" font-size="20">完整标题 Prompt</text>
+  <text x="902" y="632" fill="#2c3d4f" font-family="Arial, Microsoft YaHei, sans-serif" font-size="20">显著优于属性拼接</text>
+
+  <rect x="1170" y="500" width="320" height="170" fill="#f7f9fb" stroke="#9fb2c4" stroke-width="2"/>
+  <line x1="1210" y1="628" x2="1450" y2="628" stroke="#91a3b4" stroke-width="2"/>
+  <rect x="1230" y="590" width="34" height="38" fill="#8aa2ba"/>
+  <rect x="1304" y="566" width="34" height="62" fill="#6f8daa"/>
+  <rect x="1378" y="530" width="34" height="98" fill="#2d8ddb"/>
+  <text x="1218" y="694" fill="#708193" font-family="Arial, sans-serif" font-size="18">base</text>
+  <text x="1292" y="694" fill="#708193" font-family="Arial, sans-serif" font-size="18">LP</text>
+  <text x="1370" y="694" fill="#2d8ddb" font-family="Arial, sans-serif" font-size="18">LoRA</text>
+
+  <text x="112" y="740" fill="#0d141c" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700">适合：</text>
+  <text x="202" y="740" fill="#42505d" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22">老师评审、课程答辩、强调“清楚和专业”</text>
+  <text x="872" y="740" fill="#17324d" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700">适合：</text>
+  <text x="962" y="740" fill="#55697c" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22">研究汇报、学术展示、希望画面更柔和</text>
+
+  <text x="112" y="784" fill="#0d141c" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700">关键词：</text>
+  <text x="214" y="784" fill="#42505d" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22">强对比 / 黑白主导 / 青蓝点睛 / 更锋利</text>
+  <text x="872" y="784" fill="#17324d" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700">关键词：</text>
+  <text x="974" y="784" fill="#55697c" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22">冷灰层次 / 蓝灰细节 / 更克制 / 更平滑</text>
+</svg>

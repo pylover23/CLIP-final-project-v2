@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="endGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E66F5"/>
+      <stop offset="100%" stop-color="#26C6DA"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="#07111F"/>
+  <rect x="72" y="72" width="1136" height="576" rx="32" fill="#0B1727" stroke="#20344F" stroke-width="2"/>
+  <text x="640" y="144" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" text-anchor="middle">14 / 结论与展望</text>
+  <text x="640" y="200" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="40" font-weight="700" text-anchor="middle">回到最初的三个问题</text>
+  <rect x="136" y="252" width="1008" height="90" rx="22" fill="#10243C"/>
+  <text x="170" y="306" fill="url(#endGrad)" font-family="Microsoft YaHei, Arial, sans-serif" font-size="30" font-weight="700">答案是：原始 CLIP 能用，但 Prompt 与轻量微调共同决定了上限。</text>
+  <rect x="136" y="376" width="300" height="180" rx="24" fill="#0E1B2D" stroke="#20344F" stroke-width="2"/>
+  <rect x="490" y="376" width="300" height="180" rx="24" fill="#0E1B2D" stroke="#20344F" stroke-width="2"/>
+  <rect x="844" y="376" width="300" height="180" rx="24" fill="#0E1B2D" stroke="#20344F" stroke-width="2"/>
+  <text x="164" y="424" fill="#26C6DA" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" font-weight="700">Q1 原始 CLIP 够吗？</text>
+  <text x="164" y="468" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">能工作，但在商品域细粒度</text>
+  <text x="164" y="496" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">区分上还有明显提升空间。</text>
+  <text x="518" y="424" fill="#26C6DA" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" font-weight="700">Q2 微调有没有用？</text>
+  <text x="518" y="468" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">有，而且非常明显。</text>
+  <text x="518" y="496" fill="#3DDC97" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="700">LoRA Recall@5 = 0.8339</text>
+  <text x="518" y="526" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16">相对原始 CLIP 提升 +0.2893</text>
+  <text x="872" y="424" fill="#26C6DA" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" font-weight="700">Q3 Prompt 重要吗？</text>
+  <text x="872" y="468" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">非常重要。</text>
+  <text x="872" y="496" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">完整标题 Prompt 明显优于</text>
+  <text x="872" y="524" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">type / brand / material 等粗粒度描述。</text>
+  <text x="136" y="612" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20">后续工作：更大规模商品库、多模态推荐场景、线上检索系统验证</text>
+  <text x="1144" y="612" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" text-anchor="end">谢谢老师与同学聆听</text>
+  <text x="1192" y="668" fill="#71839E" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" text-anchor="end">15</text>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#07111F"/>
+  <text x="80" y="96" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">08 / 微调方法二</text>
+  <text x="80" y="146" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36" font-weight="700">LoRA：在后部 Transformer 中注入低秩适配</text>
+  <rect x="80" y="190" width="1120" height="446" rx="24" fill="#0B1727" stroke="#20344F" stroke-width="2"/>
+  <rect x="118" y="236" width="320" height="354" rx="22" fill="#0E1B2D" stroke="#20344F" stroke-width="2"/>
+  <text x="146" y="282" fill="#66E3FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" font-weight="700">和 Linear Probe 的区别</text>
+  <text x="146" y="338" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20">Linear Probe 只改最后的投影空间</text>
+  <text x="146" y="382" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20">LoRA 则深入到模型内部的部分线性层</text>
+  <text x="146" y="426" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">用低秩矩阵学习增量，不直接重训原权重</text>
+  <text x="146" y="490" fill="#26C6DA" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">h = Wx + α/r · BAx</text>
+  <text x="146" y="540" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">因此它更像“以更小代价改模型内部表达能力”</text>
+  <rect x="474" y="236" width="690" height="354" rx="22" fill="#0E1B2D" stroke="#20344F" stroke-width="2"/>
+  <text x="502" y="282" fill="#66E3FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" font-weight="700">为什么预计它会更强</text>
+  <rect x="520" y="324" width="598" height="70" rx="18" fill="#10243C"/>
+  <text x="548" y="352" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20">不是只在输出端“挪位置”，而是提前改变特征提取过程</text>
+  <text x="548" y="378" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16">更适合商品域这种存在细粒度视觉差异的任务</text>
+  <rect x="520" y="420" width="286" height="122" rx="18" fill="#10243C"/>
+  <rect x="832" y="420" width="286" height="122" rx="18" fill="#10243C"/>
+  <use data-icon="chunk-filled/layers" x="548" y="446" width="34" height="34" fill="#26C6DA"/>
+  <text x="598" y="466" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20">适配更靠近模型内部</text>
+  <text x="548" y="504" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="17">对特征分布的调节能力更强</text>
+  <use data-icon="chunk-filled/bolt" x="860" y="446" width="34" height="34" fill="#26C6DA"/>
+  <text x="910" y="466" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20">参数效率依然较高</text>
+  <text x="860" y="504" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="17">保持 512 维输出，便于公平比较</text>
+  <text x="1192" y="668" fill="#71839E" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" text-anchor="end">09</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+<rect x="0" y="0" width="1280" height="720" fill="#FBFBF8" stroke="none" stroke-width="0" rx="0" />
+<rect x="56" y="50" width="1168" height="620" fill="#FBFBF8" stroke="#D8DEE6" stroke-width="2" rx="0" />
+<line x1="86" y1="104" x2="1192" y2="104" stroke="#111111" stroke-width="2"/>
+<text x="86" y="84" fill="#127A94" font-family="Consolas, Courier New, monospace" font-size="15" font-weight="400" text-anchor="start" letter-spacing="2.4">FINE-TUNE I</text>
+<text x="86" y="148" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="36" font-weight="700" text-anchor="start" >Linear Probe：冻结主干，只训练投影层</text>
+<text x="1200" y="84" fill="#6C7988" font-family="Consolas, Courier New, monospace" font-size="16" font-weight="400" text-anchor="end" letter-spacing="2">08</text>
+<text x="1200" y="652" fill="#6C7988" font-family="Consolas, Courier New, monospace" font-size="16" font-weight="400" text-anchor="end" >8</text>
+<rect x="90" y="212" width="360" height="390" fill="#FFFFFF" stroke="#111111" stroke-width="2" rx="0" />
+<text x="116" y="258" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="start" >核心思想</text>
+<text x="116" y="302" fill="#3E4A59" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start" >冻结原始 CLIP 编码器，</text>
+<text x="116" y="336" fill="#3E4A59" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start" >只在图像侧和文本侧输出后</text>
+<text x="116" y="370" fill="#3E4A59" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start" >接入可训练线性投影层。</text>
+<text x="116" y="432" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="start" >优点</text>
+<text x="116" y="472" fill="#3E4A59" font-family="Arial, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start" >• 参数量小，训练快</text>
+<text x="116" y="506" fill="#3E4A59" font-family="Arial, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start" >• 保留 CLIP 原有通用视觉语义</text>
+<text x="116" y="540" fill="#3E4A59" font-family="Arial, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start" >• 适合验证“轻量适配”是否有效</text>
+<rect x="520" y="238" width="220" height="96" fill="#F1F4F7" stroke="#111111" stroke-width="2" rx="0" />
+<rect x="520" y="466" width="220" height="96" fill="#F1F4F7" stroke="#111111" stroke-width="2" rx="0" />
+<rect x="834" y="238" width="240" height="96" fill="#FFFFFF" stroke="#127A94" stroke-width="4" rx="0" />
+<rect x="834" y="466" width="240" height="96" fill="#FFFFFF" stroke="#127A94" stroke-width="4" rx="0" />
+<rect x="1112" y="350" width="90" height="96" fill="#111111" stroke="#111111" stroke-width="2" rx="0" />
+<text x="630" y="294" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="middle" >图像编码器</text>
+<text x="630" y="520" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="middle" >文本编码器</text>
+<text x="954" y="294" fill="#127A94" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="middle" >Linear Head</text>
+<text x="954" y="520" fill="#127A94" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="middle" >Linear Head</text>
+<text x="1157" y="408" fill="#FFFFFF" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="middle" >512D</text>
+<line x1="740" y1="286" x2="834" y2="286" stroke="#111111" stroke-width="3"/>
+<line x1="740" y1="514" x2="834" y2="514" stroke="#111111" stroke-width="3"/>
+<line x1="1074" y1="286" x2="1112" y2="378" stroke="#1DA9C2" stroke-width="4"/>
+<line x1="1074" y1="514" x2="1112" y2="418" stroke="#1DA9C2" stroke-width="4"/>
+</svg>

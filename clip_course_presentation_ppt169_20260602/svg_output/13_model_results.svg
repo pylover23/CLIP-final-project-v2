@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+<rect x="0" y="0" width="1280" height="720" fill="#FBFBF8" stroke="none" stroke-width="0" rx="0" />
+<rect x="56" y="50" width="1168" height="620" fill="#FBFBF8" stroke="#D8DEE6" stroke-width="2" rx="0" />
+<line x1="86" y1="104" x2="1192" y2="104" stroke="#111111" stroke-width="2"/>
+<text x="86" y="84" fill="#127A94" font-family="Consolas, Courier New, monospace" font-size="15" font-weight="400" text-anchor="start" letter-spacing="2.4">RESULT II</text>
+<text x="86" y="148" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="36" font-weight="700" text-anchor="start" >结果二：轻量微调显著提升检索性能</text>
+<text x="1200" y="84" fill="#6C7988" font-family="Consolas, Courier New, monospace" font-size="16" font-weight="400" text-anchor="end" letter-spacing="2">13</text>
+<text x="1200" y="652" fill="#6C7988" font-family="Consolas, Courier New, monospace" font-size="16" font-weight="400" text-anchor="end" >13</text>
+<rect x="90" y="202" width="1100" height="104" fill="#111111" stroke="#111111" stroke-width="2" rx="0" />
+<text x="118" y="240" fill="#A6F1FD" font-family="Consolas, Courier New, monospace" font-size="18" font-weight="400" text-anchor="start" >最优结论</text>
+<text x="118" y="286" fill="#FFFFFF" font-family="Arial, Microsoft YaHei, sans-serif" font-size="28" font-weight="700" text-anchor="start" >在 full Prompt 下，LoRA 在 Recall / MRR / NDCG 三项指标上都取得最佳结果。</text>
+<rect x="90" y="340" width="1100" height="270" fill="#FFFFFF" stroke="#111111" stroke-width="2" rx="0" />
+<line x1="160" y1="560" x2="1130" y2="560" stroke="#111111" stroke-width="2"/>
+<text x="290" y="388" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" text-anchor="middle" >Top-5</text>
+<rect x="218" y="461.972" width="36" height="98.02799999999999" fill="#111111" stroke="none" stroke-width="0" rx="0" />
+<rect x="264" y="416.0" width="36" height="144.0" fill="#7C8A99" stroke="none" stroke-width="0" rx="0" />
+<rect x="310" y="409.898" width="36" height="150.102" fill="#1DA9C2" stroke="none" stroke-width="0" rx="0" />
+<text x="236" y="580" fill="#6C7988" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" text-anchor="middle" >O</text>
+<text x="282" y="580" fill="#6C7988" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" text-anchor="middle" >LP</text>
+<text x="328" y="580" fill="#127A94" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" text-anchor="middle" >L</text>
+<text x="236" y="451.972" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" text-anchor="middle" >0.5446</text>
+<text x="282" y="406.0" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" text-anchor="middle" >0.8000</text>
+<text x="328" y="399.898" fill="#127A94" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" text-anchor="middle" >0.8339</text>
+<text x="620" y="388" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" text-anchor="middle" >Top-10</text>
+<rect x="548" y="439.31" width="36" height="120.69" fill="#111111" stroke="none" stroke-width="0" rx="0" />
+<rect x="594" y="400.25" width="36" height="159.75" fill="#7C8A99" stroke="none" stroke-width="0" rx="0" />
+<rect x="640" y="397.83799999999997" width="36" height="162.162" fill="#1DA9C2" stroke="none" stroke-width="0" rx="0" />
+<text x="566" y="580" fill="#6C7988" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" text-anchor="middle" >O</text>
+<text x="612" y="580" fill="#6C7988" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" text-anchor="middle" >LP</text>
+<text x="658" y="580" fill="#127A94" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" text-anchor="middle" >L</text>
+<text x="566" y="429.31" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" text-anchor="middle" >0.6705</text>
+<text x="612" y="390.25" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" text-anchor="middle" >0.8875</text>
+<text x="658" y="387.83799999999997" fill="#127A94" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" text-anchor="middle" >0.9009</text>
+<text x="950" y="388" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" text-anchor="middle" >Top-20</text>
+<rect x="878" y="421.31" width="36" height="138.69" fill="#111111" stroke="none" stroke-width="0" rx="0" />
+<rect x="924" y="392.06" width="36" height="167.94" fill="#7C8A99" stroke="none" stroke-width="0" rx="0" />
+<rect x="970" y="391.574" width="36" height="168.426" fill="#1DA9C2" stroke="none" stroke-width="0" rx="0" />
+<text x="896" y="580" fill="#6C7988" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" text-anchor="middle" >O</text>
+<text x="942" y="580" fill="#6C7988" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" text-anchor="middle" >LP</text>
+<text x="988" y="580" fill="#127A94" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" text-anchor="middle" >L</text>
+<text x="896" y="411.31" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" text-anchor="middle" >0.7705</text>
+<text x="942" y="382.06" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" text-anchor="middle" >0.9330</text>
+<text x="988" y="381.574" fill="#127A94" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" font-weight="400" text-anchor="middle" >0.9357</text>
+<text x="90" y="646" fill="#127A94" font-family="Arial, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" text-anchor="start" >Top-5 相比 Original CLIP：Linear Probe +0.2554，LoRA +0.2893。</text>
+</svg>

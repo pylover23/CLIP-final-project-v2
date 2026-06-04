@@ -1,0 +1,214 @@
+{
+  "params": {
+    "lr": 0.001,
+    "embedding_dim": 512,
+    "temperature": 0.1,
+    "epoch": 20,
+    "patience": 3
+  },
+  "top_k_values": [
+    5,
+    10,
+    20
+  ],
+  "results": [
+    {
+      "projection_mode": "both",
+      "baseline": "Linear Probe (text+vision)",
+      "top_k": 5,
+      "metrics": {
+        "type_recall@5": 0.0446,
+        "type_mrr@5": 0.0193,
+        "type_ndcg@5": 0.0255,
+        "material_recall@5": 0.0634,
+        "material_mrr@5": 0.0338,
+        "material_ndcg@5": 0.041,
+        "brand_recall@5": 0.1054,
+        "brand_mrr@5": 0.0501,
+        "brand_ndcg@5": 0.0637,
+        "brand_material_recall@5": 0.117,
+        "brand_material_mrr@5": 0.0599,
+        "brand_material_ndcg@5": 0.0739,
+        "full_recall@5": 0.8009,
+        "full_mrr@5": 0.5888,
+        "full_ndcg@5": 0.6418
+      }
+    },
+    {
+      "projection_mode": "both",
+      "baseline": "Linear Probe (text+vision)",
+      "top_k": 10,
+      "metrics": {
+        "type_recall@10": 0.0893,
+        "type_mrr@10": 0.025,
+        "type_ndcg@10": 0.0397,
+        "material_recall@10": 0.1152,
+        "material_mrr@10": 0.0403,
+        "material_ndcg@10": 0.0574,
+        "brand_recall@10": 0.1732,
+        "brand_mrr@10": 0.0589,
+        "brand_ndcg@10": 0.0853,
+        "brand_material_recall@10": 0.2018,
+        "brand_material_mrr@10": 0.0708,
+        "brand_material_ndcg@10": 0.101,
+        "full_recall@10": 0.8768,
+        "full_mrr@10": 0.599,
+        "full_ndcg@10": 0.6665
+      }
+    },
+    {
+      "projection_mode": "both",
+      "baseline": "Linear Probe (text+vision)",
+      "top_k": 20,
+      "metrics": {
+        "type_recall@20": 0.1598,
+        "type_mrr@20": 0.0297,
+        "type_ndcg@20": 0.0573,
+        "material_recall@20": 0.192,
+        "material_mrr@20": 0.0456,
+        "material_ndcg@20": 0.0768,
+        "brand_recall@20": 0.2982,
+        "brand_mrr@20": 0.0675,
+        "brand_ndcg@20": 0.1169,
+        "brand_material_recall@20": 0.308,
+        "brand_material_mrr@20": 0.0781,
+        "brand_material_ndcg@20": 0.1277,
+        "full_recall@20": 0.9277,
+        "full_mrr@20": 0.6027,
+        "full_ndcg@20": 0.6795
+      }
+    },
+    {
+      "projection_mode": "text_only",
+      "baseline": "Linear Probe (text only)",
+      "top_k": 5,
+      "metrics": {
+        "type_recall@5": 0.0455,
+        "type_mrr@5": 0.0193,
+        "type_ndcg@5": 0.0257,
+        "material_recall@5": 0.0661,
+        "material_mrr@5": 0.0326,
+        "material_ndcg@5": 0.0409,
+        "brand_recall@5": 0.0946,
+        "brand_mrr@5": 0.04,
+        "brand_ndcg@5": 0.0534,
+        "brand_material_recall@5": 0.1107,
+        "brand_material_mrr@5": 0.0518,
+        "brand_material_ndcg@5": 0.0663,
+        "full_recall@5": 0.6955,
+        "full_mrr@5": 0.4825,
+        "full_ndcg@5": 0.5357
+      }
+    },
+    {
+      "projection_mode": "text_only",
+      "baseline": "Linear Probe (text only)",
+      "top_k": 10,
+      "metrics": {
+        "type_recall@10": 0.0938,
+        "type_mrr@10": 0.0255,
+        "type_ndcg@10": 0.0411,
+        "material_recall@10": 0.1277,
+        "material_mrr@10": 0.0405,
+        "material_ndcg@10": 0.0605,
+        "brand_recall@10": 0.1714,
+        "brand_mrr@10": 0.0499,
+        "brand_ndcg@10": 0.0779,
+        "brand_material_recall@10": 0.1991,
+        "brand_material_mrr@10": 0.063,
+        "brand_material_ndcg@10": 0.0942,
+        "full_recall@10": 0.8107,
+        "full_mrr@10": 0.4982,
+        "full_ndcg@10": 0.5734
+      }
+    },
+    {
+      "projection_mode": "text_only",
+      "baseline": "Linear Probe (text only)",
+      "top_k": 20,
+      "metrics": {
+        "type_recall@20": 0.1893,
+        "type_mrr@20": 0.0319,
+        "type_ndcg@20": 0.065,
+        "material_recall@20": 0.242,
+        "material_mrr@20": 0.0481,
+        "material_ndcg@20": 0.089,
+        "brand_recall@20": 0.2955,
+        "brand_mrr@20": 0.0584,
+        "brand_ndcg@20": 0.1092,
+        "brand_material_recall@20": 0.3339,
+        "brand_material_mrr@20": 0.0723,
+        "brand_material_ndcg@20": 0.1282,
+        "full_recall@20": 0.8839,
+        "full_mrr@20": 0.5037,
+        "full_ndcg@20": 0.5924
+      }
+    },
+    {
+      "projection_mode": "vision_only",
+      "baseline": "Linear Probe (vision only)",
+      "top_k": 5,
+      "metrics": {
+        "type_recall@5": 0.0429,
+        "type_mrr@5": 0.019,
+        "type_ndcg@5": 0.0249,
+        "material_recall@5": 0.0688,
+        "material_mrr@5": 0.0354,
+        "material_ndcg@5": 0.0436,
+        "brand_recall@5": 0.0964,
+        "brand_mrr@5": 0.0432,
+        "brand_ndcg@5": 0.0562,
+        "brand_material_recall@5": 0.1223,
+        "brand_material_mrr@5": 0.0628,
+        "brand_material_ndcg@5": 0.0774,
+        "full_recall@5": 0.7188,
+        "full_mrr@5": 0.5067,
+        "full_ndcg@5": 0.5598
+      }
+    },
+    {
+      "projection_mode": "vision_only",
+      "baseline": "Linear Probe (vision only)",
+      "top_k": 10,
+      "metrics": {
+        "type_recall@10": 0.083,
+        "type_mrr@10": 0.0243,
+        "type_ndcg@10": 0.0377,
+        "material_recall@10": 0.1241,
+        "material_mrr@10": 0.0427,
+        "material_ndcg@10": 0.0614,
+        "brand_recall@10": 0.1634,
+        "brand_mrr@10": 0.0519,
+        "brand_ndcg@10": 0.0776,
+        "brand_material_recall@10": 0.2107,
+        "brand_material_mrr@10": 0.0745,
+        "brand_material_ndcg@10": 0.1059,
+        "full_recall@10": 0.8321,
+        "full_mrr@10": 0.5224,
+        "full_ndcg@10": 0.5971
+      }
+    },
+    {
+      "projection_mode": "vision_only",
+      "baseline": "Linear Probe (vision only)",
+      "top_k": 20,
+      "metrics": {
+        "type_recall@20": 0.1589,
+        "type_mrr@20": 0.0294,
+        "type_ndcg@20": 0.0567,
+        "material_recall@20": 0.2214,
+        "material_mrr@20": 0.0493,
+        "material_ndcg@20": 0.0858,
+        "brand_recall@20": 0.2768,
+        "brand_mrr@20": 0.0595,
+        "brand_ndcg@20": 0.106,
+        "brand_material_recall@20": 0.3312,
+        "brand_material_mrr@20": 0.0825,
+        "brand_material_ndcg@20": 0.1359,
+        "full_recall@20": 0.9009,
+        "full_mrr@20": 0.5274,
+        "full_ndcg@20": 0.6147
+      }
+    }
+  ]
+}

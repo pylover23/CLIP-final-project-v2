@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#07111F"/>
+  <text x="82" y="96" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">02 / 研究问题</text>
+  <text x="82" y="146" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36" font-weight="700">本次实验围绕三个核心问题展开</text>
+  <rect x="82" y="190" width="350" height="430" rx="26" fill="#0E1B2D" stroke="#20344F" stroke-width="2"/>
+  <rect x="464" y="190" width="350" height="430" rx="26" fill="#0E1B2D" stroke="#20344F" stroke-width="2"/>
+  <rect x="846" y="190" width="350" height="430" rx="26" fill="#0E1B2D" stroke="#20344F" stroke-width="2"/>
+  <text x="114" y="256" fill="#1E66F5" font-family="Microsoft YaHei, Arial, sans-serif" font-size="72" font-weight="700">01</text>
+  <use data-icon="chunk-filled/target" x="300" y="230" width="56" height="56" fill="#26C6DA"/>
+  <text x="114" y="326" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="700">原始 CLIP 够不够用？</text>
+  <text x="114" y="380" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20">先测出 zero-shot baseline</text>
+  <text x="114" y="412" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20">在 ABO 商品检索中的真实表现</text>
+  <text x="114" y="482" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">关注点</text>
+  <text x="114" y="518" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">· 预训练知识能否直接迁移</text>
+  <text x="114" y="548" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">· 商品域是否存在明显性能缺口</text>
+  <text x="496" y="256" fill="#1E66F5" font-family="Microsoft YaHei, Arial, sans-serif" font-size="72" font-weight="700">02</text>
+  <use data-icon="chunk-filled/bolt" x="682" y="230" width="56" height="56" fill="#26C6DA"/>
+  <text x="496" y="326" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="700">轻量微调能带来多大提升？</text>
+  <text x="496" y="380" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20">比较 Linear Probe 与 LoRA</text>
+  <text x="496" y="412" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20">看谁更适合商品域适配</text>
+  <text x="496" y="482" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">关注点</text>
+  <text x="496" y="518" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">· 少量参数是否足以提升排序质量</text>
+  <text x="496" y="548" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">· 哪种微调形式更稳定、更有效</text>
+  <text x="878" y="256" fill="#1E66F5" font-family="Microsoft YaHei, Arial, sans-serif" font-size="72" font-weight="700">03</text>
+  <use data-icon="chunk-filled/funnel" x="1064" y="230" width="56" height="56" fill="#26C6DA"/>
+  <text x="878" y="326" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="700">Prompt 细粒度重要吗？</text>
+  <text x="878" y="380" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20">从 type 到 full 的五档设计</text>
+  <text x="878" y="412" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20">观察文本信息量与效果之间的关系</text>
+  <text x="878" y="482" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">关注点</text>
+  <text x="878" y="518" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">· 属性拼接是否足够</text>
+  <text x="878" y="548" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">· 完整标题是否具有决定性优势</text>
+  <text x="82" y="668" fill="#71839E" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16">结论页会回到这三个问题逐一作答</text>
+  <text x="1192" y="668" fill="#71839E" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" text-anchor="end">03</text>
+</svg>

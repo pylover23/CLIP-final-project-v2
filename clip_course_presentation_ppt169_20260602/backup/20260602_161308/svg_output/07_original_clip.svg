@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#07111F"/>
+  <text x="80" y="96" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">06 / 基线模型</text>
+  <text x="80" y="146" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36" font-weight="700">Baseline：直接使用预训练 CLIP</text>
+  <rect x="80" y="190" width="352" height="448" rx="24" fill="#0E1B2D" stroke="#20344F" stroke-width="2"/>
+  <text x="108" y="236" fill="#66E3FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" font-weight="700">为什么先看原始 CLIP</text>
+  <text x="108" y="294" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20">1. 它是零样本 baseline</text>
+  <text x="108" y="326" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="17">不进行任何参数更新，直接迁移到商品检索场景</text>
+  <text x="108" y="378" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20">2. 它代表“预训练知识的下限”</text>
+  <text x="108" y="410" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="17">先知道原始模型多强，后面的微调提升才有意义</text>
+  <text x="108" y="462" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20">3. 它天然适合图文匹配</text>
+  <text x="108" y="494" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="17">图像编码器与文本编码器通过对比学习共享语义空间</text>
+  <rect x="108" y="548" width="296" height="62" rx="18" fill="#10243C"/>
+  <text x="136" y="586" fill="#26C6DA" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">结论预期：它能工作，但未必足够细</text>
+  <rect x="466" y="190" width="734" height="448" rx="24" fill="#0B1727" stroke="#20344F" stroke-width="2"/>
+  <rect x="538" y="266" width="182" height="138" rx="22" fill="#10243C" stroke="#1E66F5" stroke-width="2"/>
+  <rect x="948" y="266" width="182" height="138" rx="22" fill="#10243C" stroke="#26C6DA" stroke-width="2"/>
+  <rect x="744" y="238" width="180" height="194" rx="22" fill="#12253E" stroke="#20344F" stroke-width="2"/>
+  <text x="580" y="316" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="26" font-weight="700">图像</text>
+  <text x="575" y="352" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">Vision Encoder</text>
+  <text x="982" y="316" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="26" font-weight="700">文本</text>
+  <text x="972" y="352" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">Text Encoder</text>
+  <text x="788" y="292" fill="#66E3FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="700">共享语义空间</text>
+  <text x="780" y="328" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">相似图文对更靠近</text>
+  <text x="784" y="356" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">不匹配图文对更远离</text>
+  <path d="M720 335 H744" stroke="#1E66F5" stroke-width="4" stroke-linecap="round"/>
+  <path d="M924 335 H948" stroke="#26C6DA" stroke-width="4" stroke-linecap="round"/>
+  <text x="544" y="492" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20">后续所有方法都建立在这个编码框架之上，差异只在于</text>
+  <text x="544" y="524" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22">是否以及如何对商品域进行轻量适配。</text>
+  <text x="1192" y="668" fill="#71839E" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" text-anchor="end">07</text>
+</svg>

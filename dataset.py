@@ -110,8 +110,7 @@ def train_test_split(train_ratio=0.8, seed=42):
     #     raise ValueError(f"Missing required columns: {missing_columns}")
 
     # 过滤掉图像文件不存在的样本，避免后续训练和评估时出现错误（下载图片时，原先的图片忘记删除了）
-    if os.path.isdir(image_dir):
-        df = df[df["Image"].apply(lambda name: os.path.exists(os.path.join(image_dir, str(name))))].copy()
+    df = df[df["Image"].apply(lambda name: os.path.exists(os.path.join(image_dir, str(name))))].copy()
 
     trainset_ids = []
     testset_ids = []
@@ -119,7 +118,7 @@ def train_test_split(train_ratio=0.8, seed=42):
     for _, group in df.groupby("ProductType", sort=True):
         product_ids = group["ProductId"].drop_duplicates().tolist()
         random.seed(seed)
-        random.shuffle(product_ids)
+        random.shuffle(product_ids)   # 打乱顺序，保证划分的随机性
         split_idx = int(len(product_ids) * train_ratio)
         trainset_ids.extend(product_ids[:split_idx])
         testset_ids.extend(product_ids[split_idx:])
@@ -131,3 +130,6 @@ def train_test_split(train_ratio=0.8, seed=42):
     print(f"Saved {len(train_df)} training samples to {train_path}")
     print(f"Saved {len(test_df)} test samples to {test_path}")
 
+
+if __name__ == "__main__":
+    train_test_split()

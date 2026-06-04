@@ -1,0 +1,226 @@
+{
+  "total_samples": 1120,
+  "hit_count": 1051,
+  "error_count": 69,
+  "overall_error_rate": 0.0616,
+  "category_error_rates": {
+    "table": {
+      "total": 80,
+      "errors": 13,
+      "error_rate": 0.1625
+    },
+    "home furniture and decor product": {
+      "total": 80,
+      "errors": 8,
+      "error_rate": 0.1
+    },
+    "fine jewelry necklace bracelet or anklet": {
+      "total": 80,
+      "errors": 7,
+      "error_rate": 0.0875
+    },
+    "fine jewelry ring": {
+      "total": 80,
+      "errors": 6,
+      "error_rate": 0.075
+    },
+    "home product": {
+      "total": 80,
+      "errors": 6,
+      "error_rate": 0.075
+    },
+    "chair": {
+      "total": 80,
+      "errors": 6,
+      "error_rate": 0.075
+    },
+    "home bed and bath product": {
+      "total": 80,
+      "errors": 6,
+      "error_rate": 0.075
+    },
+    "rug": {
+      "total": 80,
+      "errors": 4,
+      "error_rate": 0.05
+    },
+    "sofa": {
+      "total": 80,
+      "errors": 3,
+      "error_rate": 0.0375
+    },
+    "kitchen product": {
+      "total": 80,
+      "errors": 3,
+      "error_rate": 0.0375
+    },
+    "fine jewelry earrings": {
+      "total": 80,
+      "errors": 3,
+      "error_rate": 0.0375
+    },
+    "cellular phone case": {
+      "total": 80,
+      "errors": 3,
+      "error_rate": 0.0375
+    },
+    "shoes": {
+      "total": 80,
+      "errors": 1,
+      "error_rate": 0.0125
+    },
+    "wall art": {
+      "total": 80,
+      "errors": 0,
+      "error_rate": 0.0
+    }
+  },
+  "same_category_confusion": 47,
+  "cross_category_confusion": 22,
+  "wrong_top1_type_distribution": {
+    "fine jewelry ring": 7,
+    "chair": 4,
+    "home product": 10,
+    "table": 16,
+    "home bed and bath product": 4,
+    "shoes": 1,
+    "kitchen product": 5,
+    "rug": 7,
+    "fine jewelry necklace bracelet or anklet": 7,
+    "home furniture and decor product": 2,
+    "cellular phone case": 3,
+    "sofa": 1,
+    "fine jewelry earrings": 2
+  },
+  "hit_rank_distribution": {
+    "0": 585,
+    "1": 180,
+    "2": 75,
+    "3": 55,
+    "4": 27,
+    "5": 29,
+    "6": 16,
+    "7": 15,
+    "8": 12,
+    "9": 9,
+    "10": 7,
+    "11": 8,
+    "12": 4,
+    "13": 7,
+    "14": 5,
+    "15": 4,
+    "16": 5,
+    "17": 3,
+    "18": 3,
+    "19": 2
+  },
+  "worst_categories": [
+    "table",
+    "home furniture and decor product",
+    "fine jewelry necklace bracelet or anklet"
+  ],
+  "typical_errors": [
+    {
+      "product_id": 230,
+      "query_type": "table",
+      "Brand": "AmazonBasics",
+      "Material": "Legno",
+      "ProductTitle": "AmazonBasics - Comodino, 45 x 38 x 50 cm, colore marrone",
+      "Image": "B07RMJPJWF.jpg",
+      "top1_retrieved_pid": 3083,
+      "top1_retrieved_type": "table",
+      "top5_retrieved": [
+        "3083_img",
+        "27_img",
+        "828_img",
+        "1074_img",
+        "5399_img"
+      ]
+    },
+    {
+      "product_id": 532,
+      "query_type": "table",
+      "Brand": "Ravenna Home",
+      "Material": "Steel",
+      "ProductTitle": "Amazon Brand - Ravenna Home Archer Outdoor Patio C-Shaped Steel Side Table with Panel Top, 16.54\"W, Gray",
+      "Image": "B082VSLQBK.jpg",
+      "top1_retrieved_pid": 1614,
+      "top1_retrieved_type": "table",
+      "top5_retrieved": [
+        "1614_img",
+        "5192_img",
+        "1389_img",
+        "4048_img",
+        "1479_img"
+      ]
+    },
+    {
+      "product_id": 210,
+      "query_type": "home furniture and decor product",
+      "Brand": "AmazonBasics",
+      "Material": "Tela",
+      "ProductTitle": "AmazonBasics - Sedia da ufficio con mezzo schienale a rete",
+      "Image": "B00TFJY9RC.jpg",
+      "top1_retrieved_pid": 2713,
+      "top1_retrieved_type": "chair",
+      "top5_retrieved": [
+        "2713_img",
+        "477_img",
+        "2126_img",
+        "686_img",
+        "2272_img"
+      ]
+    },
+    {
+      "product_id": 677,
+      "query_type": "home furniture and decor product",
+      "Brand": "Pinzon by Amazon",
+      "Material": "ull",
+      "ProductTitle": "Pinzon handkrok hostkant ullmatta 3'6 X 5'6",
+      "Image": "B001DA0KXS.jpg",
+      "top1_retrieved_pid": 888,
+      "top1_retrieved_type": "kitchen product",
+      "top5_retrieved": [
+        "888_img",
+        "1050_img",
+        "4522_img",
+        "225_img",
+        "2737_img"
+      ]
+    },
+    {
+      "product_id": 985,
+      "query_type": "fine jewelry necklace bracelet or anklet",
+      "Brand": "Amazon Collection",
+      "Material": "metall",
+      "ProductTitle": "Amazon Collection Women's 925 Rhodium-Plated Silver",
+      "Image": "B01M06ZCLA.jpg",
+      "top1_retrieved_pid": 2439,
+      "top1_retrieved_type": "fine jewelry necklace bracelet or anklet",
+      "top5_retrieved": [
+        "2439_img",
+        "2529_img",
+        "5562_img",
+        "4050_img",
+        "5378_img"
+      ]
+    },
+    {
+      "product_id": 1106,
+      "query_type": "fine jewelry necklace bracelet or anklet",
+      "Brand": "Amazon Collection",
+      "Material": "metal",
+      "ProductTitle": "Collier avec pendentif en forme de cur concave en or 14 carats, 45,7 cm,rose",
+      "Image": "B00VM66GEA.jpg",
+      "top1_retrieved_pid": 635,
+      "top1_retrieved_type": "fine jewelry necklace bracelet or anklet",
+      "top5_retrieved": [
+        "635_img",
+        "463_img",
+        "4470_img",
+        "502_img",
+        "1603_img"
+      ]
+    }
+  ]
+}

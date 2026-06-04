@@ -1,0 +1,24 @@
+{
+  "type_recall@5": 0.0411,
+  "type_mrr@5": 0.0184,
+  "type_ndcg@5": 0.0239,
+  "material_recall@5": 0.067,
+  "material_mrr@5": 0.0304,
+  "material_ndcg@5": 0.0394,
+  "brand_recall@5": 0.1045,
+  "brand_mrr@5": 0.052,
+  "brand_ndcg@5": 0.065,
+  "brand_material_recall@5": 0.133,
+  "brand_material_mrr@5": 0.0674,
+  "brand_material_ndcg@5": 0.0836,
+  "full_recall@5": 0.7982,
+  "full_mrr@5": 0.5936,
+  "full_ndcg@5": 0.6449,
+  "params": {
+    "lr": 0.001,
+    "embedding_dim": 512,
+    "temperature": 0.07,
+    "epoch": 20,
+    "patience": 3
+  }
+}

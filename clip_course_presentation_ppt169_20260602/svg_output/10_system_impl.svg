@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+<rect x="0" y="0" width="1280" height="720" fill="#FBFBF8" stroke="none" stroke-width="0" rx="0" />
+<rect x="56" y="50" width="1168" height="620" fill="#FBFBF8" stroke="#D8DEE6" stroke-width="2" rx="0" />
+<line x1="86" y1="104" x2="1192" y2="104" stroke="#111111" stroke-width="2"/>
+<text x="86" y="84" fill="#127A94" font-family="Consolas, Courier New, monospace" font-size="15" font-weight="400" text-anchor="start" letter-spacing="2.4">SYSTEM</text>
+<text x="86" y="148" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="36" font-weight="700" text-anchor="start" >关键实现：CLIP Embedding + ChromaDB Top-K 检索</text>
+<text x="1200" y="84" fill="#6C7988" font-family="Consolas, Courier New, monospace" font-size="16" font-weight="400" text-anchor="end" letter-spacing="2">10</text>
+<text x="1200" y="652" fill="#6C7988" font-family="Consolas, Courier New, monospace" font-size="16" font-weight="400" text-anchor="end" >10</text>
+<rect x="90" y="262" width="220" height="170" fill="#FFFFFF" stroke="#111111" stroke-width="2" rx="0" />
+<text x="112" y="314" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="28" font-weight="700" text-anchor="start" >离线编码</text>
+<text x="112" y="356" fill="#3E4A59" font-family="Arial, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" text-anchor="start" >测试图像编码为 embedding</text>
+<rect x="366" y="262" width="220" height="170" fill="#FFFFFF" stroke="#111111" stroke-width="2" rx="0" />
+<text x="388" y="314" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="28" font-weight="700" text-anchor="start" >向量入库</text>
+<text x="388" y="356" fill="#3E4A59" font-family="Arial, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" text-anchor="start" >以 ProductId_img 写入 ChromaDB</text>
+<rect x="642" y="262" width="220" height="170" fill="#FFFFFF" stroke="#111111" stroke-width="2" rx="0" />
+<text x="664" y="314" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="28" font-weight="700" text-anchor="start" >在线查询</text>
+<text x="664" y="356" fill="#3E4A59" font-family="Arial, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" text-anchor="start" >Prompt 编码为文本向量</text>
+<rect x="918" y="262" width="220" height="170" fill="#FFFFFF" stroke="#111111" stroke-width="2" rx="0" />
+<text x="940" y="314" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="28" font-weight="700" text-anchor="start" >Top-K 返回</text>
+<text x="940" y="356" fill="#3E4A59" font-family="Arial, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" text-anchor="start" >返回最匹配候选图像</text>
+<line x1="310" y1="347" x2="366" y2="347" stroke="#1DA9C2" stroke-width="4"/>
+<line x1="586" y1="347" x2="642" y2="347" stroke="#1DA9C2" stroke-width="4"/>
+<line x1="862" y1="347" x2="918" y2="347" stroke="#1DA9C2" stroke-width="4"/>
+<rect x="166" y="504" width="950" height="106" fill="#E6F7FB" stroke="#127A94" stroke-width="2" rx="0" />
+<text x="190" y="548" fill="#127A94" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" text-anchor="start" >实现重点：统一使用 CLIP embedding 作为检索空间，保证不同模型和不同 Prompt 的结果可直接比较。</text>
+<text x="190" y="584" fill="#127A94" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start" >这样做也更贴近实际工业场景中的向量检索流水线。</text>
+</svg>

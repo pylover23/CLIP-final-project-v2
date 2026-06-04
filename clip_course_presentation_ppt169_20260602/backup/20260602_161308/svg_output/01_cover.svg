@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E66F5"/>
+      <stop offset="100%" stop-color="#26C6DA"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="78%" cy="16%" r="42%">
+      <stop offset="0%" stop-color="#26C6DA" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#26C6DA" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="18%" cy="82%" r="34%">
+      <stop offset="0%" stop-color="#1E66F5" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#1E66F5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="#07111F"/>
+  <rect width="1280" height="720" fill="url(#glowA)"/>
+  <rect width="1280" height="720" fill="url(#glowB)"/>
+  <path d="M72 116 H392" stroke="#26C6DA" stroke-width="4" stroke-linecap="round"/>
+  <path d="M72 604 H484" stroke="#20344F" stroke-width="2"/>
+  <path d="M808 120 C930 150 1020 210 1142 308" stroke="#20344F" stroke-width="2" fill="none"/>
+  <path d="M814 164 C944 188 1048 262 1174 388" stroke="#1E66F5" stroke-opacity="0.36" stroke-width="2" fill="none"/>
+  <circle cx="978" cy="214" r="88" fill="none" stroke="#20344F" stroke-width="2"/>
+  <circle cx="1090" cy="322" r="132" fill="none" stroke="#20344F" stroke-width="2"/>
+  <circle cx="904" cy="456" r="12" fill="#26C6DA" fill-opacity="0.9"/>
+  <circle cx="1038" cy="268" r="8" fill="#66E3FF" fill-opacity="0.9"/>
+  <circle cx="1122" cy="412" r="10" fill="#1E66F5" fill-opacity="0.95"/>
+  <circle cx="952" cy="512" r="6" fill="#3DDC97"/>
+  <text x="72" y="168" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22">课程展示 · 多模态商品检索项目</text>
+  <text x="72" y="272" fill="url(#titleGrad)" font-family="Microsoft YaHei, Arial, sans-serif" font-size="64" font-weight="700">基于 CLIP 的</text>
+  <text x="72" y="350" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="64" font-weight="700">ABO 商品图文检索实验</text>
+  <text x="72" y="422" fill="#A8B7CF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28">轻量微调、Prompt 细粒度与检索性能分析</text>
+  <rect x="72" y="474" width="560" height="74" rx="18" fill="#0E1B2D" stroke="#20344F" stroke-width="2"/>
+  <text x="102" y="520" fill="#EAF2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24">胡文煜  ·  程序设计语言课程展示  ·  2026 春季学期</text>
+  <text x="72" y="642" fill="#71839E" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16">核心结论预告：完整商品标题 Prompt 与 LoRA 微调共同决定检索性能上限</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+<rect x="0" y="0" width="1280" height="720" fill="#FBFBF8" stroke="none" stroke-width="0" rx="0" />
+<rect x="56" y="50" width="1168" height="620" fill="#FBFBF8" stroke="#D8DEE6" stroke-width="2" rx="0" />
+<line x1="86" y1="104" x2="1192" y2="104" stroke="#111111" stroke-width="2"/>
+<text x="86" y="84" fill="#127A94" font-family="Consolas, Courier New, monospace" font-size="15" font-weight="400" text-anchor="start" letter-spacing="2.4">RESULT I</text>
+<text x="86" y="148" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="36" font-weight="700" text-anchor="start" >结果一：完整标题 Prompt 显著优于属性拼接</text>
+<text x="1200" y="84" fill="#6C7988" font-family="Consolas, Courier New, monospace" font-size="16" font-weight="400" text-anchor="end" letter-spacing="2">12</text>
+<text x="1200" y="652" fill="#6C7988" font-family="Consolas, Courier New, monospace" font-size="16" font-weight="400" text-anchor="end" >12</text>
+<rect x="90" y="210" width="760" height="410" fill="#FFFFFF" stroke="#111111" stroke-width="2" rx="0" />
+<rect x="882" y="210" width="308" height="410" fill="#111111" stroke="#111111" stroke-width="2" rx="0" />
+<text x="118" y="252" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" text-anchor="start" >Original CLIP 下不同 Prompt 的 Recall@5</text>
+<line x1="140" y1="572" x2="786" y2="572" stroke="#111111" stroke-width="2"/>
+<line x1="140" y1="300" x2="140" y2="572" stroke="#111111" stroke-width="2"/>
+<rect x="214" y="551.1133333333333" width="46" height="20.886666666666667" fill="#111111" stroke="none" stroke-width="0" rx="0" />
+<text x="237" y="539.1133333333333" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" text-anchor="middle" >0.0482</text>
+<text x="237" y="602" fill="#6C7988" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" text-anchor="middle" >type</text>
+<rect x="308" y="542.1866666666666" width="46" height="29.813333333333336" fill="#111111" stroke="none" stroke-width="0" rx="0" />
+<text x="331" y="530.1866666666666" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" text-anchor="middle" >0.0688</text>
+<text x="331" y="602" fill="#6C7988" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" text-anchor="middle" >material</text>
+<rect x="402" y="549.1633333333333" width="46" height="22.836666666666666" fill="#111111" stroke="none" stroke-width="0" rx="0" />
+<text x="425" y="537.1633333333333" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" text-anchor="middle" >0.0527</text>
+<text x="425" y="602" fill="#6C7988" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" text-anchor="middle" >brand</text>
+<rect x="496" y="537.94" width="46" height="34.06" fill="#111111" stroke="none" stroke-width="0" rx="0" />
+<text x="519" y="525.94" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" text-anchor="middle" >0.0786</text>
+<text x="519" y="602" fill="#6C7988" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" text-anchor="middle" >brand+mat.</text>
+<rect x="590" y="336.00666666666666" width="46" height="235.99333333333334" fill="#1DA9C2" stroke="none" stroke-width="0" rx="0" />
+<text x="613" y="324.00666666666666" fill="#1DA9C2" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" text-anchor="middle" >0.5446</text>
+<text x="613" y="602" fill="#6C7988" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" text-anchor="middle" >full</text>
+<text x="908" y="258" fill="#FFFFFF" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="start" >关键发现</text>
+<text x="908" y="318" fill="#EAF2FF" font-family="Arial, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" text-anchor="start" >1. 属性型 Prompt</text>
+<text x="908" y="350" fill="#EAF2FF" font-family="Arial, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" text-anchor="start" >提升有限，Recall@5</text>
+<text x="908" y="382" fill="#EAF2FF" font-family="Arial, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" text-anchor="start" >普遍低于 0.08。</text>
+<text x="908" y="444" fill="#A6F1FD" font-family="Arial, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" text-anchor="start" >2. full Prompt</text>
+<text x="908" y="476" fill="#EAF2FF" font-family="Arial, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" text-anchor="start" >直接跃升到</text>
+<text x="908" y="526" fill="#FFFFFF" font-family="Arial, Microsoft YaHei, sans-serif" font-size="42" font-weight="700" text-anchor="start" >0.5446</text>
+<text x="908" y="570" fill="#EAF2FF" font-family="Arial, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" text-anchor="start" >说明完整标题是最关键的</text>
+<text x="908" y="598" fill="#EAF2FF" font-family="Arial, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" text-anchor="start" >文本信息来源。</text>
+</svg>

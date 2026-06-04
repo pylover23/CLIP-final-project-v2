@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+<rect x="0" y="0" width="1280" height="720" fill="#FBFBF8" stroke="none" stroke-width="0" rx="0" />
+<rect x="56" y="50" width="1168" height="620" fill="#FBFBF8" stroke="#D8DEE6" stroke-width="2" rx="0" />
+<line x1="86" y1="104" x2="1192" y2="104" stroke="#111111" stroke-width="2"/>
+<text x="86" y="84" fill="#127A94" font-family="Consolas, Courier New, monospace" font-size="15" font-weight="400" text-anchor="start" letter-spacing="2.4">FINE-TUNE II</text>
+<text x="86" y="148" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="36" font-weight="700" text-anchor="start" >LoRA：在后部 Transformer 模块中注入低秩适配</text>
+<text x="1200" y="84" fill="#6C7988" font-family="Consolas, Courier New, monospace" font-size="16" font-weight="400" text-anchor="end" letter-spacing="2">09</text>
+<text x="1200" y="652" fill="#6C7988" font-family="Consolas, Courier New, monospace" font-size="16" font-weight="400" text-anchor="end" >9</text>
+<rect x="90" y="212" width="412" height="390" fill="#111111" stroke="#111111" stroke-width="2" rx="0" />
+<text x="116" y="258" fill="#FFFFFF" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="start" >LoRA 的关键点</text>
+<text x="116" y="302" fill="#D9E4F1" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start" >不直接更新全部参数，而是在后部</text>
+<text x="116" y="336" fill="#D9E4F1" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start" >Transformer Block 中插入低秩适配分支。</text>
+<text x="116" y="396" fill="#A6F1FD" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="start" >优点</text>
+<text x="116" y="438" fill="#D9E4F1" font-family="Arial, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start" >• 适配能力强于只改输出头</text>
+<text x="116" y="472" fill="#D9E4F1" font-family="Arial, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start" >• 仍保持参数高效</text>
+<text x="116" y="506" fill="#D9E4F1" font-family="Arial, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start" >• 更适合商品域细粒度对齐</text>
+<rect x="578" y="234" width="530" height="320" fill="#FFFFFF" stroke="#111111" stroke-width="2" rx="0" />
+<rect x="624" y="280" width="180" height="70" fill="#F1F4F7" stroke="#111111" stroke-width="2" rx="0" />
+<rect x="624" y="374" width="180" height="70" fill="#F1F4F7" stroke="#111111" stroke-width="2" rx="0" />
+<rect x="878" y="280" width="184" height="70" fill="#E8F9FC" stroke="#127A94" stroke-width="3" rx="0" />
+<rect x="878" y="374" width="184" height="70" fill="#E8F9FC" stroke="#127A94" stroke-width="3" rx="0" />
+<text x="714" y="323" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="middle" >Frozen Block</text>
+<text x="714" y="417" fill="#111111" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="middle" >Frozen Block</text>
+<text x="970" y="311" fill="#127A94" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="middle" >LoRA A / B</text>
+<text x="970" y="343" fill="#127A94" font-family="Arial, Microsoft YaHei, sans-serif" font-size="18" font-weight="400" text-anchor="middle" >low-rank update</text>
+<text x="970" y="405" fill="#127A94" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="middle" >LoRA A / B</text>
+<text x="970" y="437" fill="#127A94" font-family="Arial, Microsoft YaHei, sans-serif" font-size="18" font-weight="400" text-anchor="middle" >task adaptation</text>
+<line x1="804" y1="315" x2="878" y2="315" stroke="#111111" stroke-width="3"/>
+<line x1="804" y1="409" x2="878" y2="409" stroke="#111111" stroke-width="3"/>
+<text x="578" y="598" fill="#127A94" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start" >直观理解：Linear Probe 改“出口”，LoRA 改“后部语义变换过程”。</text>
+</svg>

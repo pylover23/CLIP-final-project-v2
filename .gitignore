@@ -1,38 +1,7 @@
-# Python
 __pycache__/
-*.py[cod]
-*.pyo
+*.pyc
+.venv/
 *.egg-info/
 dist/
 build/
-
-# Virtual environments
-venv/
-.venv/
-env/
-
-# IDE
-.vscode/
-.idea/
-
-# ChromaDB
-chroma_db_*/
-
-# Results (generated)
-results/
-grid_search_results/
-
-# LaTeX build artifacts
-*.aux
-*.log
-*.out
-*.synctex.gz
-*.fls
-*.fdb_latexmk
-
-# Dataset (large files)
-data_abo_subset_selected14_english/
-
-# OS
-.DS_Store
-Thumbs.db
+.env

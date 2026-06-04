@@ -12,7 +12,7 @@ from torch.utils.data import DataLoader
 from model import build_image_collection
 import tqdm
 
-app = FastAPI(title="CLIP 电商图文检索 Demo")
+app = FastAPI(title="Person Website - CLIP 电商图文检索")
 
 # ---------- 全局配置 ----------
 IMAGE_DIR = "./data_abo_subset_selected14_english/images"
@@ -126,7 +126,37 @@ def index():
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<title>CLIP 电商图文检索</title>
+<title>Person Website</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", sans-serif; background: #f5f5f5; color: #333; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+  .card { background: #fff; border-radius: 12px; padding: 48px 40px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); text-align: center; max-width: 480px; }
+  h1 { font-size: 1.8em; margin-bottom: 12px; }
+  p { color: #666; margin-bottom: 28px; }
+  a.btn {
+    display: inline-block; padding: 14px 36px; font-size: 16px; color: #fff;
+    background: #4a90d9; border-radius: 8px; text-decoration: none; transition: background 0.2s;
+  }
+  a.btn:hover { background: #357abd; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Person Website</h1>
+  <p>个人项目展示站点</p>
+  <a class="btn" href="/CLIP图文检索">CLIP 图文检索 Demo</a>
+</div>
+</body>
+</html>"""
+
+
+@app.get("/CLIP图文检索", response_class=HTMLResponse)
+def clip_search():
+    return """<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>Person Website</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, "Segoe UI", sans-serif; background: #f5f5f5; color: #333; }
@@ -159,10 +189,16 @@ def index():
 </head>
 <body>
 <div class="container">
-  <h1>CLIP 电商图文检索 Demo</h1>
+  <h1>Person Website — CLIP 电商图文检索</h1>
+  <div style="margin-bottom:16px;"><a href="/" style="color:#4a90d9;text-decoration:none;">← 返回首页</a></div>
   <div class="search-bar">
     <input id="query" type="text" placeholder="输入商品描述，如 a photo of a red dress" autofocus
            onkeydown="if(event.key==='Enter') doSearch()">
+    <select id="topK">
+      <option value="5">Top 5</option>
+      <option value="10">Top 10</option>
+      <option value="20">Top 20</option>
+    </select>
     <button onclick="doSearch()">搜索</button>
   </div>
   <div style="margin:-16px 0 16px; font-size:13px; color:#666;">
@@ -183,7 +219,7 @@ async function doSearch() {
     const res = await fetch('/api/search', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({query: q, top_k: 5, hybrid: document.getElementById('hybrid').checked})
+      body: JSON.stringify({query: q, top_k: parseInt(document.getElementById('topK').value), hybrid: document.getElementById('hybrid').checked})
     });
     const data = await res.json();
     loading.style.display = 'none';
@@ -195,7 +231,7 @@ async function doSearch() {
       <div class="card">
         <img src="${r.image_url}" alt="${r.title}" loading="lazy">
         <div class="info">
-          <div class="title">${r.title}</div>
+          <div class="title" title="${r.title}">${r.title}</div>
           <div class="score">#${i+1} &middot; ID: ${r.product_id} &middot; sim: ${r.score}</div>
         </div>
       </div>

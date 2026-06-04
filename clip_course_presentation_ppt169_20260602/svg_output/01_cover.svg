@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+<rect x="0" y="0" width="1280" height="720" fill="#0B1220" stroke="none" stroke-width="0" rx="0" />
+<rect x="72" y="72" width="1136" height="576" fill="#111C2E" stroke="#1A2B44" stroke-width="2" rx="0" />
+<line x1="760" y1="120" x2="760" y2="602" stroke="#20304B" stroke-width="1"/>
+<line x1="804" y1="120" x2="804" y2="602" stroke="#20304B" stroke-width="1"/>
+<line x1="848" y1="120" x2="848" y2="602" stroke="#20304B" stroke-width="1"/>
+<line x1="892" y1="120" x2="892" y2="602" stroke="#20304B" stroke-width="1"/>
+<line x1="936" y1="120" x2="936" y2="602" stroke="#20304B" stroke-width="1"/>
+<line x1="980" y1="120" x2="980" y2="602" stroke="#20304B" stroke-width="1"/>
+<line x1="1024" y1="120" x2="1024" y2="602" stroke="#20304B" stroke-width="1"/>
+<line x1="1068" y1="120" x2="1068" y2="602" stroke="#20304B" stroke-width="1"/>
+<line x1="1112" y1="120" x2="1112" y2="602" stroke="#20304B" stroke-width="1"/>
+<line x1="1156" y1="120" x2="1156" y2="602" stroke="#20304B" stroke-width="1"/>
+<line x1="760" y1="120" x2="1160" y2="120" stroke="#20304B" stroke-width="1"/>
+<line x1="760" y1="164" x2="1160" y2="164" stroke="#20304B" stroke-width="1"/>
+<line x1="760" y1="208" x2="1160" y2="208" stroke="#20304B" stroke-width="1"/>
+<line x1="760" y1="252" x2="1160" y2="252" stroke="#20304B" stroke-width="1"/>
+<line x1="760" y1="296" x2="1160" y2="296" stroke="#20304B" stroke-width="1"/>
+<line x1="760" y1="340" x2="1160" y2="340" stroke="#20304B" stroke-width="1"/>
+<line x1="760" y1="384" x2="1160" y2="384" stroke="#20304B" stroke-width="1"/>
+<line x1="760" y1="428" x2="1160" y2="428" stroke="#20304B" stroke-width="1"/>
+<line x1="760" y1="472" x2="1160" y2="472" stroke="#20304B" stroke-width="1"/>
+<line x1="760" y1="516" x2="1160" y2="516" stroke="#20304B" stroke-width="1"/>
+<line x1="760" y1="560" x2="1160" y2="560" stroke="#20304B" stroke-width="1"/>
+<rect x="86" y="112" width="140" height="8" fill="#1DA9C2" stroke="none" stroke-width="0" rx="0" />
+<text x="86" y="160" fill="#9DB6D3" font-family="Consolas, Courier New, monospace" font-size="18" font-weight="400" text-anchor="start" letter-spacing="1.8">课程汇报 / CLIP RETRIEVAL</text>
+<text x="86" y="274" fill="#F6FAFF" font-family="Arial, Microsoft YaHei, sans-serif" font-size="60" font-weight="700" text-anchor="start" >基于 CLIP 的</text>
+<text x="86" y="350" fill="#F6FAFF" font-family="Arial, Microsoft YaHei, sans-serif" font-size="62" font-weight="700" text-anchor="start" >ABO 商品图文检索实验</text>
+<text x="86" y="416" fill="#AFBED0" font-family="Arial, Microsoft YaHei, sans-serif" font-size="28" font-weight="400" text-anchor="start" >轻量微调、Prompt 粒度与检索性能分析</text>
+<rect x="86" y="468" width="534" height="82" fill="#0E1A2C" stroke="#29415F" stroke-width="2" rx="0" />
+<text x="114" y="520" fill="#EAF2FF" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="400" text-anchor="start" >胡文煜  ·  程序设计语言课程展示  ·  2026 春季学期</text>
+<text x="86" y="620" fill="#88A1BD" font-family="Arial, Microsoft YaHei, sans-serif" font-size="18" font-weight="400" text-anchor="start" >核心主张：完整标题 Prompt 与 LoRA 微调共同决定性能上限</text>
+<rect x="820" y="156" width="260" height="260" fill="none" stroke="#1DA9C2" stroke-width="4" rx="0" />
+<rect x="874" y="210" width="260" height="260" fill="none" stroke="#8FDDE8" stroke-width="2" rx="0" />
+<rect x="928" y="264" width="180" height="180" fill="#11253F" stroke="none" stroke-width="0" rx="0" />
+<text x="1018" y="360" fill="#9DD7E3" font-family="Consolas, Courier New, monospace" font-size="22" font-weight="400" text-anchor="middle" >Recall@5</text>
+<text x="1018" y="420" fill="#F5FBFF" font-family="Arial, Microsoft YaHei, sans-serif" font-size="56" font-weight="700" text-anchor="middle" >0.8339</text>
+<line x1="820" y1="528" x2="1148" y2="528" stroke="#2F4968" stroke-width="2"/>
+<text x="820" y="560" fill="#7F95AC" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" text-anchor="start" >Original CLIP</text>
+<text x="994" y="560" fill="#7F95AC" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" text-anchor="middle" >Linear Probe</text>
+<text x="1148" y="560" fill="#1DA9C2" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="400" text-anchor="end" >LoRA</text>
+</svg>

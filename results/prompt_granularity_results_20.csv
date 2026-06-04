@@ -1,0 +1,16 @@
+baseline,prompt,recall@20,mrr@20,ndcg@20
+Original CLIP,type,0.2018,0.0355,0.0704
+Original CLIP,material,0.2580,0.0490,0.0933
+Original CLIP,brand,0.2027,0.0385,0.0732
+Original CLIP,brand_material,0.2714,0.0538,0.1001
+Original CLIP,full,0.7786,0.4002,0.4871
+CLIP+Linear Probe,type,0.1482,0.0295,0.0547
+CLIP+Linear Probe,material,0.1964,0.0441,0.0764
+CLIP+Linear Probe,brand,0.3009,0.0676,0.1175
+CLIP+Linear Probe,brand_material,0.3170,0.0838,0.1342
+CLIP+Linear Probe,full,0.9223,0.5976,0.6746
+CLIP+LoRA,type,0.1464,0.0324,0.0566
+CLIP+LoRA,material,0.2223,0.0543,0.0904
+CLIP+LoRA,brand,0.2554,0.0637,0.1047
+CLIP+LoRA,brand_material,0.2938,0.0781,0.1246
+CLIP+LoRA,full,0.9384,0.6552,0.7224
