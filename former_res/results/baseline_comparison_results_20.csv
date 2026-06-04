@@ -1,4 +1,0 @@
-baseline,prompt,recall@20,mrr@20,ndcg@20
-Original CLIP,full,0.7705,0.3843,0.4724
-CLIP+Linear Probe,full,0.9330,0.6123,0.6881
-CLIP+LoRA,full,0.9357,0.6575,0.7238
