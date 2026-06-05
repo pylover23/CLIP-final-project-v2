@@ -447,6 +447,9 @@ def load_lora_model(rank=8, alpha=16, dropout=0.05):
 
 
 def evaluate_all(test_loader, top_k=5, linear_model=None, lora_model=None):
+    """
+        同时评估原始CLIP、linear probe和LoRA模型
+    """
     all_rows = []
     baseline_rows = []
 
