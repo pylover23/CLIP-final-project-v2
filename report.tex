@@ -76,6 +76,7 @@
 \begin{document}
 \maketitle
 \thispagestyle{fancy}
+\footnotetext{\normalsize 本项目地址：\url{https://github.com/pylover23/CLIP-final-project-v2}}
 
 % ========== 摘要 ==========
 \begin{abstract}
@@ -377,21 +378,21 @@ Linear Probe 通过网格搜索选择超参数。考虑到原始 CLIP 与 LoRA �
         \toprule
         \textbf{投影方式} & \textbf{Prompt} & \textbf{Recall@5} & \textbf{MRR@5} & \textbf{NDCG@5} \\
         \midrule
-        text+vision & type & 0.0446 & 0.0193 & 0.0255 \\
+        text+vision & type & 0.0446 & \textbf{0.0193} & 0.0255 \\
         text+vision & material & 0.0634 & 0.0338 & 0.0410 \\
-        text+vision & brand & 0.1054 & 0.0501 & 0.0637 \\
+        text+vision & brand & \textbf{0.1054} & \textbf{0.0501} & \textbf{0.0637} \\
         text+vision & brand\_material & 0.1170 & 0.0599 & 0.0739 \\
         text+vision & full & \textbf{0.8009} & \textbf{0.5888} & \textbf{0.6418} \\
         \midrule
-        text only & type & \textbf{0.0455} & 0.0193 & 0.0257 \\
+        text only & type & \textbf{0.0455} & 0.0193 & \textbf{0.0257}\\
         text only & material & 0.0661 & 0.0326 & 0.0409 \\
         text only & brand & 0.0946 & 0.0400 & 0.0534 \\
         text only & brand\_material & 0.1107 & 0.0518 & 0.0663 \\
         text only & full & 0.6955 & 0.4825 & 0.5357 \\
         \midrule
-        vision only & type & 0.0429 & \textbf{0.0190} & \textbf{0.0249} \\
+        vision only & type & 0.0429 & 0.0190 & 0.0249 \\
         vision only & material & \textbf{0.0688} & \textbf{0.0354} & \textbf{0.0436} \\
-        vision only & brand & \textbf{0.0964} & \textbf{0.0432} & \textbf{0.0562} \\
+        vision only & brand & 0.0964 & 0.0432 & 0.0562 \\
         vision only & brand\_material & \textbf{0.1223} & \textbf{0.0628} & \textbf{0.0774} \\
         vision only & full & 0.7188 & 0.5067 & 0.5598 \\
         \bottomrule
@@ -440,7 +441,8 @@ LoRA 在 \texttt{full} prompt 下取得所有模型中的最佳结果，Top-5、
 
 \subsection{Linear Probe 投影位置的影响}
 
-从表~\ref{tab:linear-ablation-top5} 可以看出，Linear Probe 的投影位置对不同类型 prompt 的影响并不完全相同。对于 \texttt{type} prompt，\texttt{text only} 略优于另外两种方案；而在 \texttt{material}、\texttt{brand} 和 \texttt{brand\_material} 三类属性型 prompt 上，\texttt{vision only} 结果略好，例如在 \texttt{brand\_material} prompt 下，\texttt{vision only} 的 \texttt{Recall@5} 为 $0.1223$，高于 \texttt{text only} 的 $0.1107$。这说明在当前实验设置下，属性信息的对齐不仅受文本侧表达影响，图像侧投影同样会改变细粒度属性的匹配边界。
+从表~\ref{tab:linear-ablation-top5} 可以看出，Linear Probe 的投影位置对不同类型 prompt 的影响并不完全相同。对于 \texttt{type} prompt，\texttt{text only} 略优于另外两种方案；而在 \texttt{material} 和 \texttt{brand\_material} 涉及到材质的属性型 prompt 上，\texttt{vision only} 结果更好，这说明在当前实验设置下，属性信息的对齐不仅受文本侧表达影响，图像侧投影同样会改变细粒度属性的匹配边界。
+并且，当输入为粗细粒度prompt时，文本信息密度较低，微调优化文本编码器带来的收益效益有限，甚至可能引入过拟合风险；而微调图像编码器则能使编码器更好地提取图像特征分布，以适应文本侧的属性信息的对齐需求。
 
 但在 \texttt{full} prompt 下，最优结果来自 \texttt{text+vision} 双侧投影。表~\ref{tab:linear-ablation-full-topk} 显示，\texttt{text+vision} 在 Top-5、Top-10 和 Top-20 下均取得最高的 Recall、MRR 和 NDCG，其中 Top-20 Recall 达到 $0.9277$。这说明当 prompt 包含完整商品标题时，同时调整图像侧和文本侧可以进一步重塑两种模态的共同 embedding 空间，从而获得更好的整体排序质量。因此，消融实验表明：属性 prompt 下三种方案差距不大，但对于信息量更大的完整标题 prompt，双侧投影仍然是更稳定、更有效的选择。
 
@@ -492,7 +494,7 @@ LoRA 在 \texttt{full} prompt 下取得所有模型中的最佳结果，Top-5、
 
 \textbf{（2）跨类别混淆（22/69，$31.9\%$）。} 跨类别错误主要源于以下三种情况：
 \begin{itemize}[leftmargin=2em, itemsep=0pt]
-    \item \textbf{非英文标题。} 原始数据集中存在大量西班牙语、法语、德语、意大利语和瑞典语的商品标题，在构建数据集时统一将其翻译为英文，但翻译过程可能引入语义损失。CLIP 的文本编码器主要在英文语料上训练，对非英文文本的编码质量较低，容易导致跨类别误匹配。例如，一个瑞典语标题的桌子被错误匹配到法语标题的沙发。
+    \item \textbf{非英文标题。} 原始数据集中存在大量西班牙语、法语、德语、意大利语和瑞典语的商品标题，在构建数据集时统一将其翻译为英文，但翻译过程可能引入语义损失。CLIP 的文本编码器主要在英文语料上训练，对非英文文本的编码质量较低，容易导致跨类别误匹配。
     \item \textbf{同品牌跨类别。} Amazon 自有品牌的产品线覆盖多个类别，同品牌不同类别的商品在标题中包含相同的品牌关键词，容易造成文本相似度过高而跨类别匹配。
     \item \textbf{语义模糊的通用描述。} 部分商品标题过于简短或通用，缺乏有效的类别区分信息。
 \end{itemize}
@@ -559,11 +561,13 @@ OpenAI CLIP. \url{https://github.com/openai/CLIP}
 \end{thebibliography}
 
 
+
 \section{AI使用情况}
 AI使用情况如下：
 \begin{enumerate}[leftmargin=2em, itemsep=0pt]
     \item \textbf{数据集处理：} 由于原始数据集中存在部分非英文内容，如日语、法语等等，为了方便，直接将原始数据集丢给AI，让其将所有非英文标题翻译成英文。翻译过程中，AI 可能会引入一些语义损失。
     \item \textbf{LoRA模型类：} 代码部分，由于时间有限，无法深入学习理解LoRA微调的原理细节，在\text{model.py}中有关LoRA的模型类，是让AI参考我自己写的Linear Probe模型类，结合LoRA的原理，写出来的
+    \item \textbf{Web展示页面：} demo.py中展示页面的HTML代码部分，是由AI编写。而后端处理逻辑则是直接复用其他代码文件中的API接口，AI没有参与编写。
 \end{enumerate}
 
 \end{document}
