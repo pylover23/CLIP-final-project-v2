@@ -7,7 +7,7 @@ from dataset import ECommerceDataset, train_test_split
 from model import ECommerceCLIPLinearProbe, evaluate_prompts_text2image, train_contrastive
 from utils import write_csv, write_json
 
-
+# 消融实验不同的投影方案
 ABLATION_MODES = [
     ("both", "Linear Probe (text+vision)"),
     ("text_only", "Linear Probe (text only)"),
@@ -22,6 +22,9 @@ def project_path(*parts):
 
 
 def load_best_params(path=None):
+    """
+        使用grid search得到的最优参数进行消融实验，默认从grid_search_results/best_linear_probe_params.json中加载
+    """
     path = path or project_path("grid_search_results", "best_linear_probe_params.json")
     with open(path, "r", encoding="utf-8") as f:
         info = json.load(f)
@@ -45,7 +48,7 @@ def normalize_metric_rows(rows, projection_mode, top_k):
 
 def run_linear_probe_ablation(train_loader, test_loader, top_k_values=(5, 10, 20)):
     params = load_best_params()
-    run_tag = time.strftime("%Y%m%d_%H%M%S")
+    run_tag = time.strftime("%Y%m%d_%H%M%S")  # 时间戳作为本次消融实验的唯一标识
     all_rows = []
     summary = {
         "params": params,
@@ -72,6 +75,7 @@ def run_linear_probe_ablation(train_loader, test_loader, top_k_values=(5, 10, 20
             save_path=checkpoint_path,
         )
 
+        # 评估不同top_k下的性能，并收集结果
         for top_k in top_k_values:
             metrics, rows = evaluate_prompts_text2image(
                 model,
